@@ -27,4 +27,15 @@ public class MainActivity extends AppCompatActivity {
         mWebView.loadUrl("http://google.com/");
 
     }
+      
+    //Handle presses on back button. If there is a previous page, go there.
+    @Override
+    public void onBackPressed() {
+        if(mWebView.canGoBack()) {
+            mWebView.goBack();
+        } else {
+            super.onBackPressed();
+        }
+    }
+    
 }
